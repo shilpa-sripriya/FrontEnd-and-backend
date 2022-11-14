@@ -1,0 +1,65 @@
+<body>
+    
+<div class="container-fluid">
+    <div  class="text-center registerForm" >
+        <form action="" #myForm="ngForm" (ngSubmit)="register()">
+            <div class="text-center title">
+                <h5>Registering The Tourist!</h5>
+            </div>
+            <div class="input-group ">
+                <span class="input-group-text" id="basic-addon1">Id</span>
+               <input type="number" class="form-control" required name="id" min="1" max="9999" [class.is-invalid]="id.invalid&&id.dirty" #id="ngModel" placeholder="Id" aria-label="Username" [(ngModel)]="t.id" aria-describedby="basic-addon1">
+            </div>
+            <span class="text-danger error" [class.d-none]="id.pristine||id.valid">Invalid Id</span>  
+            <span class="text-danger error" [class.d-none]="isValid">Invalid Id</span>  
+            
+              <br>
+            <div class="input-group ">
+                <span class="input-group-text" id="basic-addon1">First Name</span>
+                   <input type="text" class="form-control" maxlength="15" pattern="^[a-zA-Z]{1,15}$" required [class.is-invalid]="fname.invalid&&fname.dirty" #fname="ngModel" name="firstName" placeholder="FirstName" [(ngModel)]="firstName" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <span class="text-danger error" [class.d-none]="fname.pristine||fname.valid">Invalid First Name</span>  
+            
+             <br>
+              <div class="input-group ">
+                <span class="input-group-text"  id="basic-addon1">Last Name</span>
+                <input type="text" maxlength="12" class="form-control" pattern="^[a-zA-Z]{1,12}$" name="lastName" required [class.is-invalid]="lname.invalid&&lname.dirty" #lname="ngModel" placeholder="LastName" aria-label="Username" [(ngModel)]="lastName" aria-describedby="basic-addon1">
+              </div>
+              <span class="text-danger error" [class.d-none]="lname.pristine||lname.valid">Invalid Last Name</span>  
+            <br>
+              <div class="input-group" >
+                <span class="input-group-text" id="basic-addon1">Gender </span>  &nbsp;
+              <div class="form-check form-check-inline">
+                 <input class="form-check-input" required type="radio" name="gender" [class.is-invalid]="gender.invalid&&gender.dirty" #gender="ngModel" [(ngModel)]="t.gender" id="inlineRadio1" value="male">
+                <label class="form-check-label" for="inlineRadio1">Male</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" required type="radio" [class.is-invalid]="gender.invalid&&gender.dirty" #gender="ngModel" name="gender" [(ngModel)]="t.gender" id="inlineRadio2" value="female">
+                <label class="form-check-label" for="inlineRadio2">Female</label>
+              </div>  
+            </div> <br> 
+              <div class="input-group ">
+                <span class="input-group-text"  id="basic-addon1">Age</span>
+                <input type="number" maxlength="2" required max="90" min="1" class="form-control" [class.is-invalid]="age.invalid&&age.dirty" #age="ngModel" name="age" placeholder="Age" aria-label="Username" [(ngModel)]="t.age" aria-describedby="basic-addon1">
+              </div>
+              <span class="text-danger error" [class.d-none]="age.pristine||age.valid">Invalid Age</span>  
+            <br>
+              <div class="input-group ">
+                <span class="input-group-text" id="basic-addon1">From Place</span>
+                <input type="text" required pattern="^[A-Za-z]{1,}$" class="form-control" [class.is-invalid]="place.invalid&&place.dirty" #place="ngModel" name="fromPlace" placeholder="FromPlace" aria-label="Username" [(ngModel)]="t.fromPlace" aria-describedby="basic-addon1">
+              </div>
+              <span class="text-danger error" [class.d-none]="place.pristine||place.valid">Invalid Place</span>  
+           <br>
+              <div class="input-group ">
+                <span class="input-group-text" id="basic-addon1">No days</span>
+                <input type="number" required min="1"  class="form-control" [class.is-invalid]="days.invalid&&days.dirty" #days="ngModel" name="numberOfDaysVisit" placeholder="Numberofdays" [(ngModel)]="t.numberOfDaysVisit" aria-label="Username" aria-describedby="basic-addon1">
+              </div>   
+              <span class="text-danger error" [class.d-none]="days.pristine||days.valid">Invalid Number</span>  
+           <br>
+              <button type="submit"  class="btn btn-dark col-12 d-grid gap-2" [disabled]="myForm.invalid">Register</button>  
+            </form>   
+            
+    </div>
+    
+</div>
+</body>

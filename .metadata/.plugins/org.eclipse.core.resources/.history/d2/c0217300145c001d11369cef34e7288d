@@ -1,0 +1,7 @@
+package com.registration.serviceimpl;
+
+import com.registration.service.TouristService;
+
+public class TouristServiceImpl implements TouristService {
+
+}

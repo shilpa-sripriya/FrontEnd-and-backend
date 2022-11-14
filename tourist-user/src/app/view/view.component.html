@@ -1,0 +1,30 @@
+<body>
+    
+<table class="table table-striped">
+    <thead class="thead-dark" >
+      <tr>
+        <th scope="col">name</th>
+        <th scope="col">Id</th>
+        <th scope="col">Age</th>
+        <th scope="col">FromPlace</th>
+        <th scope="col">Gender</th>
+        <th scope="col">NumberOfDaysVisit</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let x of tourists'>
+            <td>{{x.name}} </td>
+           
+            <td>{{x.id}}</td>
+            <td>{{x.age}}</td>
+            <td>{{x.fromPlace}}</td>
+            <td>{{x.gender}}</td>
+            <td>{{x.numberOfDaysVisit}}</td>
+          </tr> 
+    </tbody>
+  </table>
+  <img src="../../assets/images/form5.jpg" width="0px" height="260px" alt="">
+</body>
+
+
+

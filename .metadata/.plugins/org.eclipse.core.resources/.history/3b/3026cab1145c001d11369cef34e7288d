@@ -1,0 +1,9 @@
+package com.registration.serviceimpl;
+
+import org.springframework.stereotype.Service;
+
+import com.registration.service.TouristService;
+@Service
+public class TouristServiceImpl implements TouristService {
+
+}

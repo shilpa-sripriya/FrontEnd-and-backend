@@ -1,0 +1,22 @@
+body{
+    background-image: url(../../assets/images/travel5.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 10px 10px;
+}
+.multicolortext {
+    
+    color:rgb(145, 1, 1);
+    font-family: 'Times New Roman', serif,fantasy;
+     }
+     .multicolortext2{
+    
+        color: rgb(145, 1, 1);
+        font-family: 'Times New Roman', serif,fantasy;
+         }
+         .quotes{
+            color:black;
+         }
+
+  
+  

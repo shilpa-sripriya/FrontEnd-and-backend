@@ -1,0 +1,39 @@
+package com.registration;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import com.registration.entity.Tourist;
+import com.registration.repository.TouristRepository;
+@RunWith(SpringRunner.class)
+@SpringBootTest
+class TouristRegistrationApplicationTests {
+
+	@MockBean
+	private TouristRepository trepo;
+	
+	@Test
+	void contextLoads() {
+	}
+	@Test
+	public void setStudentTest() {
+		Tourist t1=new Tourist(3,
+		          "ZaheerKhan",
+		        "male",
+		         12,
+		         "Sweden",
+		         22);
+		trepo.save(t1);
+		List<Tourist> t=trepo.findAllByOrderByNameDesc();
+		assertEquals(t.size(),1);
+	}
+
+}

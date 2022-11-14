@@ -1,0 +1,6 @@
+body{
+    background-image: url(../../assets/images/brown5.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 10px 10px;
+}

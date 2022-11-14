@@ -1,0 +1,11 @@
+package com.registration.repository;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+import com.registration.entity.Tourist;
+
+public interface TouristRepository extends CrudRepository<Tourist,Long>{
+			List<Tourist> findAllByOrderByNameDesc();
+}

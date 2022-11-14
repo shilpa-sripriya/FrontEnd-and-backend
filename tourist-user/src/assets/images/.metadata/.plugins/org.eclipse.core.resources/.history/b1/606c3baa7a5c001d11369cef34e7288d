@@ -1,0 +1,29 @@
+package com.registration.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.registration.entity.Tourist;
+import com.registration.service.TouristService;
+
+@RestController
+@RequestMapping("/tourists")
+public class TouristController {
+	
+	@Autowired
+	private TouristService touristService;
+	
+	@RequestMapping("/getalltourists")
+	public List<Tourist> getAllTourists(){
+		return touristService.getAllTourists();
+	}
+	
+	@RequestMapping("/registertourist")
+	public boolean registerTourist(@RequestBody Tourist tourist){
+		return touristService.registerTourist(tourist);
+	}
+}
